@@ -14,6 +14,19 @@ module.exports = function (config) {
         })
     )
 
+    config.addFilter('markdown', function (str) {
+
+        const md = require('markdown-it')({
+            html: false,
+            breaks: true,
+            linkify: true
+        });
+        return md.render(str);
+
+
+
+    });
+
 
     // Pass-through files
     config.addPassthroughCopy('src/assets/images')

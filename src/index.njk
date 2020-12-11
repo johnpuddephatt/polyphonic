@@ -38,7 +38,7 @@
   <span class="anchor" id="about"></span>
   <div class="section">
     <div class="container container-intro container__narrower">
-      {{ home.about | safe }}
+      {{ home.about | markdown | safe }}
       <div class="section"></div>
     </div>
   </div>
@@ -54,7 +54,7 @@
               <h4>{{ service.title }}</h4>
             </div>
             <div class="panel-body">
-              {{ service.body | safe }}
+              {{ service.body | markdown | safe }}
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
       <h3>About Antony</h3>
       <div class="row">
         <div class="col-sm-8">
-          {{ home.me | safe }}
+          {{ home.me | markdown | safe }}
         </div>
         <div class="col-sm-4 meimage-column">
           <span class="meimage" style="background-image: url({{ home.me_image}});">
@@ -81,7 +81,7 @@
   <div class="section bg-grey">
     <div class="container container-contact">
       <h3>Contact Antony</h3>
-      {{ home.contact | safe }}
+      {{ home.contact | markdown | safe }}
     </div>
   </div>
   <nav class="navbar navbar-default navbar-fixed-top">
