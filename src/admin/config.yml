@@ -55,19 +55,19 @@ collections:
           - label: About
             name: about
             required: true
-            widget: text
+            widget: markdown
             hint: ""
             default: ""
           - label: Me
             name: me
             required: true
-            widget: text
+            widget: markdown
             hint: ""
             default: ""
           - label: Contact
             name: contact
             required: true
-            widget: text
+            widget: markdown
             hint: ""
             default: ""
           - label: Me image
@@ -91,8 +91,8 @@ collections:
               hint: ""
               default: ""
             - label: Body
-              name: body
+              name: title
               required: true
-              widget: text
+              widget: markdown
               hint: ""
               default: ""
