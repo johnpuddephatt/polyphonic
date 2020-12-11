@@ -91,7 +91,7 @@ collections:
               hint: ""
               default: ""
             - label: Body
-              name: title
+              name: body
               required: true
               widget: text
               hint: ""
