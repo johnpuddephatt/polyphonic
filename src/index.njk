@@ -1,9 +1,124 @@
----
-layout: base
-eleventyNavigation:
-  key: Home
----
+<!DOCTYPE html>
+<html lang="{{ meta.lang }}">
 
-<div class="container">
-    <h1>A blank 11ty project.</h1>
-</div>
+<head>
+  <title>{{ meta.title }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+  <link href="/assets/styles/styles.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta property="og:title" content="{{ meta.title }}" />
+  <meta property="og:description" content="{{ meta.description }}" />
+  <meta property="og:image" itemprop="image" content="{{ meta.header_image }}" />
+  <meta property="og:url" content="{{ meta.url }}" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125428433-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', {{ meta.analytics }});
+    </script>
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <div class="section jumbotron text-center" style="background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)), url({{ home.header_image }});">
+    <div class="container container__narrow">
+      <h1>{{ meta.title }}</h1>
+      <p>{{ meta.description }}</p>
+    </div>
+  </div>
+  <span class="anchor" id="about"></span>
+  <div class="section">
+    <div class="container container-intro container__narrower">
+      {{ home.about | safe }}
+      <div class="section"></div>
+    </div>
+  </div>
+  <span class="anchor" id="services"></span>
+  <div class="section">
+    <div class="container container-services">
+      <h3>Services</h3>
+      <div class="row row-services">
+        {%- for service in home.services -%}
+        <div class="col-sm-4 row-column">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h4>{{ service.title }}</h4>
+            </div>
+            <div class="panel-body">
+              {{ service.body | safe }}
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+  <span class="anchor" id="antony"></span>
+  <div class="section">
+    <div class="container container-about container__narrow">
+      <h3>About Antony</h3>
+      <div class="row">
+        <div class="col-sm-8">
+          {{ home.me | safe }}
+        </div>
+        <div class="col-sm-4 meimage-column">
+          <span class="meimage" style="background-image: url({{ home.me_image}});">
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="anchor" id="contact"></span>
+  <div class="section bg-grey">
+    <div class="container container-contact">
+      <h3>Contact Antony</h3>
+      {{ home.contact | safe }}
+    </div>
+  </div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Polyphonic</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">Hello</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#antony">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script>
+    $(document).ready(function() {
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function() {
+            window.location.hash = hash;
+          });
+        }
+      });
+    })
+  </script>
+</body>
+
+</html>

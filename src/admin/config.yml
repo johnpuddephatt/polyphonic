@@ -1,0 +1,98 @@
+# config.yml
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+site_url: https://polyphonic.org.uk/
+media_folder: '/src/uploads'
+public_folder: "/uploads"
+collections:
+  - name: site
+    label: Site settings
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: src/data/meta.json
+        label: Meta
+        name: meta
+        fields:
+          - label: Title
+            name: title
+            required: true
+            widget: string
+            hint: ""
+            default: ""
+          - label: Description
+            name: description
+            required: true
+            widget: text
+            hint: ""
+            default: ""
+          - label: URL
+            name: url
+            required: true
+            widget: string
+            hint: ""
+            default: ""
+          - label: Image
+            name: image
+            required: true
+            widget: image
+            hint: ""
+            default: ""
+            allow_multiple: false
+      - file: src/data/home.json
+        label: Home
+        name: home
+        fields:
+          - label: Header image
+            name: header_image
+            required: true
+            widget: image
+            hint: ""
+            default: ""
+            allow_multiple: false
+          - label: About
+            name: about
+            required: true
+            widget: text
+            hint: ""
+            default: ""
+          - label: Me
+            name: me
+            required: true
+            widget: text
+            hint: ""
+            default: ""
+          - label: Contact
+            name: contact
+            required: true
+            widget: text
+            hint: ""
+            default: ""
+          - label: Me image
+            name: me_image
+            required: true
+            widget: image
+            hint: ""
+            default: ""
+            allow_multiple: false
+          - label: "Services"
+              name: "services"
+              widget: "list"
+              max: 3
+              min: 3
+              minimize_collapsed: true
+              fields:
+              - label: Title
+                name: title
+                required: true
+                widget: string
+                hint: ""
+                default: ""
+              - label: Body
+                name: title
+                required: true
+                widget: text
+                hint: ""
+                default: ""

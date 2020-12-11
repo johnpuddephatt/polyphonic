@@ -1,7 +1,9 @@
 {
-    "title": "Eleventastic",
-    "description": "An Eleventy Starter Kit",
-    "url": "https://eleventastic.netlify.app",
+    "title": "Polyphonic",
+    "description": "Strategic communications support for ambitious brands and organisations",
+    "url": "https://polyphonic.org.uk/",
+    "image": "\/assets\/images\/header.jpg",
     "lang": "en",
-    "locale": "en_us"
+    "locale": "en_us",
+    "analytics": "UA-125428433-1"
 }
