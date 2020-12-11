@@ -78,21 +78,21 @@ collections:
             default: ""
             allow_multiple: false
           - label: "Services"
-              name: "services"
-              widget: "list"
-              max: 3
-              min: 3
-              minimize_collapsed: true
-              fields:
-              - label: Title
-                name: title
-                required: true
-                widget: string
-                hint: ""
-                default: ""
-              - label: Body
-                name: title
-                required: true
-                widget: text
-                hint: ""
-                default: ""
+            name: "services"
+            widget: "list"
+            max: 3
+            min: 3
+            minimize_collapsed: true
+            fields:
+            - label: Title
+              name: title
+              required: true
+              widget: string
+              hint: ""
+              default: ""
+            - label: Body
+              name: title
+              required: true
+              widget: text
+              hint: ""
+              default: ""
